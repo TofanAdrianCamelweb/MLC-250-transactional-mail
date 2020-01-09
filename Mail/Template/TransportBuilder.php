@@ -402,6 +402,7 @@ class TransportBuilder
             (string)$template->getSubject(),
             ENT_QUOTES
         );
+        $this->messageData['encoding'] = $mimePart->getCharset();
         $this->message = $this->emailMessageInterfaceFactory->create($this->messageData);
 
         return $this;
